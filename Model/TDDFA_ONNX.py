@@ -26,7 +26,7 @@ class TDDFA_ONNX(object):
         # torch.set_grad_enabled(False)
 
         # load onnx version of BFM
-        bfm_fp = kvs.get('bfm_fp', '/home/ubuntu/murata/FastAPIServer/3DDFAFastAPI/Model/configs/bfm_noneck_v3.pkl')
+        bfm_fp = '/home/ubuntu/murata/FastAPIServer/3DDFAFastAPI/Model/configs/bfm_noneck_v3.pkl'
         # bfm_fp = kvs.get('bfm_fp', make_abs_path('configs/bfm_noneck_v3.pkl'))
         bfm_onnx_fp = bfm_fp.replace('.pkl', '.onnx')
         if not osp.exists(bfm_onnx_fp):
@@ -51,7 +51,7 @@ class TDDFA_ONNX(object):
         #    'param_mean_std_fp', make_abs_path(f'configs/param_mean_std_62d_{self.size}x{self.size}.pkl')
         # )
 
-        param_mean_std_fp = kvs.get('param_mean_std_fp', '/home/ubuntu/murata/Media2Cloud/FastAPIServer/3DDFAFastAPI/Model/configs/param_mean_std_62d_{self.size}x{self.size}.pkl')
+        param_mean_std_fp = '/home/ubuntu/murata/Media2Cloud/FastAPIServer/3DDFAFastAPI/Model/configs/param_mean_std_62d_{self.size}x{self.size}.pkl'
 
 
         onnx_fp = kvs.get('onnx_fp', kvs.get('checkpoint_fp').replace('.pth', '.onnx'))
