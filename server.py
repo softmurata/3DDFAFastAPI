@@ -23,6 +23,10 @@ def predict_image(file: List[bytes]=File(...)):
     ## infer_type = "landmark", "dense", "render", "render_depth", "pncc", "obj"
     preds = predict(image, infer_type=infer_type)
 
+    # ToDo
+    # upload files
+    # create results
+
     return preds
 
 
