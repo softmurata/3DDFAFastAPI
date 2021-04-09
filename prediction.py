@@ -17,7 +17,7 @@ import yaml
 
 import subprocess
 
-onnx_flag = False
+onnx_flag = True
 
 
 def load_model():
