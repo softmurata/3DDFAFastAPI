@@ -24,7 +24,8 @@ def _to_ctype(arr):
 
 def _load_tri(bfm_fp):
     if osp.split(bfm_fp)[-1] == 'bfm_noneck_v3.pkl':
-        tri = _load(make_abs_path('/Users/tatsuro/Documents/Media2CloudTutorial/3DFFATorchserve/Model/configs/tri.pkl'))  # this tri/face is re-built for bfm_noneck_v3
+        # tri = _load(make_abs_path('/Users/tatsuro/Documents/Media2CloudTutorial/3DFFATorchserve/Model/configs/tri.pkl'))  # this tri/face is re-built for bfm_noneck_v3
+        tri = _load(make_abs_path('/home/ubuntu/murata/Media2Cloud/FastAPIServer/3DDFAFastAPI/Model/configs/tri.pkl'))
     else:
         tri = _load(bfm_fp).get('tri')
 
@@ -95,4 +96,5 @@ def convert_bfm_to_onnx(bfm_onnx_fp, shape_dim=40, exp_dim=10):
 
 
 if __name__ == '__main__':
-    convert_bfm_to_onnx('/Users/tatsuro/Documents/Media2CloudTutorial/3DFFATorchserve/Model/configs/bfm_noneck_v3.onnx')
+    # convert_bfm_to_onnx('/Users/tatsuro/Documents/Media2CloudTutorial/3DFFATorchserve/Model/configs/bfm_noneck_v3.onnx')
+    convert_bfm_to_onnx('/home/ubuntu/murata/Media2Cloud/FastAPIServer/3DDFAFastAPI/Model/configs/bfm_noneck_v3.onnx')
