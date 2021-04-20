@@ -5,6 +5,7 @@ from typing import List
 
 from fastapi import FastAPI
 from fastapi import File
+import boto3
 
 
 from prediction import read_image, preprocess, predict
@@ -12,6 +13,7 @@ from prediction import read_image, preprocess, predict
 import uvicorn
 
 app = FastAPI()
+
 
 
 @app.post("/api/predict")
@@ -26,6 +28,9 @@ def predict_image(file: List[bytes]=File(...)):
     # ToDo
     # upload files
     # create results
+    s3_client = boto3.resource("s3")
+    s3_client.Bucket("murata-torchserve-db").upload_file(Filename="test_obj.obj", Key="test_obj.obj")
+
 
     return preds
 
