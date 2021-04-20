@@ -21,8 +21,8 @@ onnx_flag = True
 
 
 def load_model():
-    # config = yaml.load(open("Model/configs/mb1_120x120.yml"), Loader=yaml.SafeLoader)
-    config = yaml.load(open("/home/ubuntu/murata/Media2Cloud/FastAPIServer/3DDFAFastAPI/Model/configs/mb1_120x120.yml"), Loader=yaml.SafeLoader)
+    config = yaml.load(open("Model/configs/mb1_120x120.yml"), Loader=yaml.SafeLoader)
+    # config = yaml.load(open("/home/ubuntu/murata/Media2Cloud/FastAPIServer/3DDFAFastAPI/Model/configs/mb1_120x120.yml"), Loader=yaml.SafeLoader)
 
     if onnx_flag:
         import os
